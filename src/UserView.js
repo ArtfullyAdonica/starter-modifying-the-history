@@ -10,6 +10,7 @@ function UserView({ users, removeUser }) {
   const [first, last] = name.split(" ");
 
   const manageDeleteUser = () => {
+    navigate("/"); //Send to home page.
     removeUser(current.id, users);
   };
 
