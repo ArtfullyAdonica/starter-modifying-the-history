@@ -1,4 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
+function UserView({ users }) {
+  const navigate = useNavigate();import { useParams } from "react-router-dom";
 
 function UserView({ users, removeUser }) {
   const { userId } = useParams();
@@ -40,12 +43,9 @@ function UserView({ users, removeUser }) {
             <td>{last}</td>
             <td>{email}</td>
             <td>
-              <button
-                className="btn btn-danger btn-sm"
-                onClick={manageDeleteUser}
-              >
-                Delete User
-              </button>
+              <button className="btn btn-link p-0 pb-1" onClick={() => navigate(-1)}>
+  Back
+</button>
             </td>
           </tr>
         </tbody>
